@@ -10,7 +10,7 @@ const DB = mysql.createConnection({
 
 const execQuery = util.promisify(DB.query.bind(DB));
 
-const transaction = async () => {
+async function transaction{
     DB.connect();
     
     // change the default autocommit to 0 so it will never commit till i tell it to do so
