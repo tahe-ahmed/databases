@@ -31,6 +31,7 @@ async function transaction{
         // execute the queries
         await Promise.all[execQuery(autoCommit), execQuery(lanuchTransaction), execQuery(substractFromAccount101), execQuery(addToAccount102), execQuery(logChangesToTheChangesTable), execQuery(stopTransaction)];
     } catch (error) {
+        execQuery('ROLLBACK');
         console.error(error);
     }
     DB.end();
