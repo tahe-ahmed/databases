@@ -14,13 +14,13 @@ async function createTables(){
     const createDB = `CREATE DATABASE IF NOT EXISTS DB_week3; USE DB_week3;`;
 
     const createAccTable = `CREATE TABLE IF NOT EXISTS account (
-        account_number INT,
-        balance INT 
+        account_number INT PRIMARY KEY,
+        balance DECIMAL 
     );`;
 
     const createAccChangTable = `CREATE TABLE IF NOT EXISTS account_changes (
         change_number INT PRIMARY KEY AUTO_INCREMENT,
-        account_number INT PRIMARY KEY,
+        account_number INT,
         amount DECIMAL,
         changed_date DATETIME,
         remark VARCHAR(250) 
