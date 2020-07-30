@@ -20,8 +20,8 @@ async function createTables(){
 
     const createAccChangTable = `CREATE TABLE IF NOT EXISTS account_changes (
         change_number INT PRIMARY KEY AUTO_INCREMENT,
-        account_number INT,
-        amount INT,
+        account_number INT PRIMARY KEY,
+        amount DECIMAL,
         changed_date DATETIME,
         remark VARCHAR(250) 
     );
